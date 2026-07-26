@@ -6,9 +6,16 @@ int main(){
     cout<<"Enter number of terms: ";
     cin>>n;
 
+    int a, r;
+
+    cout<<"Enter first term: ";
+    cin>>a;
+
+    cout<<"Enter common ratio: ";
+    cin>>r;
+
     // 2 5 8 11 14 17 20 23 26 29..........
 
-    int a= 1, r=2;
     for(int i=1; i<=n; i++){
         cout<<a<<" ";
         a *= r;
