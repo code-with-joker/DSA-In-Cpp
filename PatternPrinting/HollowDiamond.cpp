@@ -1,40 +1,42 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-int main() {
-    int n;
-    cout << "Enter the number of rows (half of the diamond): ";
-    cin >> n;
+int main(){
+    int rows;
+    cout << "Enter the number : ";
+    cin >> rows;
 
-    // 1. Upper Half of the Diamond
-    for (int i = 1; i <= n; i++) {
-        // Print spaces
-        for (int j = 1; j <= n - i; j++) {
-            cout << " ";
+    // 1. Upper Part of Hollow Diamond
+    for(int i = 1; i <= rows; i++){
+        // Leading Spaces
+        for(int j = 1; j <= rows - i; j++){
+            cout << "  ";
         }
-        // Print stars
-        for (int j = 1; j <= (2 * i - 1); j++) {
-            if (j == 1 || j == (2 * i - 1)) {
-                cout << "*";
+        
+        // Stars & Inner Spaces (Boundary Logic)
+        for(int j = 1; j <= 2*i - 1; j++){
+            if(j == 1 || j == 2*i - 1) {
+                cout << "* "; // Pehla aur aakhri star
             } else {
-                cout << " ";
+                cout << "  "; // Beech me khali space
             }
         }
         cout << endl;
     }
 
-    // 2. Lower Half of the Diamond
-    for (int i = n - 1; i >= 1; i--) {
-        // Print spaces
-        for (int j = 1; j <= n - i; j++) {
-            cout << " ";
+    // 2. Lower Part of Hollow Diamond
+    for(int i = rows - 1; i >= 1; i--){
+        // Leading Spaces
+        for(int j = 1; j <= rows - i; j++){
+            cout << "  ";
         }
-        // Print stars
-        for (int j = 1; j <= (2 * i - 1); j++) {
-            if (j == 1 || j == (2 * i - 1)) {
-                cout << "*";
+        
+        // Stars & Inner Spaces (Boundary Logic)
+        for(int j = 1; j <= 2*i - 1; j++){
+            if(j == 1 || j == 2*i - 1) {
+                cout << "* "; // Pehla aur aakhri star
             } else {
-                cout << " ";
+                cout << "  "; // Beech me khali space
             }
         }
         cout << endl;
